@@ -9,7 +9,7 @@ import unittest, time, re
 import xmlrunner
 import mysql.connector
 
-class IDWithWrongFormatSalary(unittest.TestCase):
+class Test_ID_Salary(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
