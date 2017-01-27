@@ -16,7 +16,9 @@ $dbhost = 'localhost';
 
 		/* check connection */
 		if (mysqli_connect_errno()) {
-		    die('Could not connect: ' .  mysqli_connect_error());  
+
+			printAlert('Could not connect: ' .  mysqli_connect_error());
+		    die('');  
 		    
 		}
 
@@ -33,7 +35,8 @@ $dbhost = 'localhost';
 		
 		$errormsg = validData($emp_id, $emp_salary);
 		if ($errormsg != NULL ){
-			die($errormsg);
+			printAlert($errormsg);
+			die('');
 		}
 
 		$stmt = $mysqli->prepare("INSERT INTO employee (emp_id ,emp_salary ) VALUES (? , ?) ON DUPLICATE KEY UPDATE emp_id =?, emp_salary=? ");
@@ -135,6 +138,9 @@ function validData( $emp_id , $emp_salary ){
         return NULL;
 }
 
+function printAlert($msg){
+    echo '<div id="errmsg"><p style="color: #ffffff; background-color: #ff0000">'.$msg.'</p></div>' ;
+}
 ?>
 
 
