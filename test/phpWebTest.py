@@ -6,13 +6,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
-<<<<<<< HEAD
-import xmlrunner
 
-=======
-#import HTMLTestRunner
 import xmlrunner
->>>>>>> 3fa27ced49f834648cd727e4ec6935773ccc9783
 
 class TestCasePython(unittest.TestCase):
     def setUp(self):
@@ -56,12 +51,6 @@ class TestCasePython(unittest.TestCase):
         self.assertEqual([], self.verificationErrors)
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    with open('phpWebTestResults.xml', 'wb+') as output:
-        unittest.main(testRunner=xmlrunner.XMLTestRunner(output=output))
-
-=======
 	with open('phpWebTestResults.xml', 'wb') as output:
     		unittest.main(testRunner=xmlrunner.XMLTestRunner(output=output))
- #HTMLTestRunner.main()
->>>>>>> 3fa27ced49f834648cd727e4ec6935773ccc9783
+
